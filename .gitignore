@@ -1,7 +1,9 @@
-# .gitignore - Protege credenciais sensíveis
+# .gitignore - Observatório de Aracaju
+node_modules/
+dist/
 .env
 .env.local
-*.env
 *.log
 *.swp
 __pycache__/
+.DS_Store
