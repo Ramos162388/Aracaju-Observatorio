@@ -1,0 +1,7 @@
+# .gitignore - Protege credenciais sensíveis
+.env
+.env.local
+*.env
+*.log
+*.swp
+__pycache__/
