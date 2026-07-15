@@ -1,0 +1,9 @@
+# .gitignore - Observatório de Aracaju
+node_modules/
+dist/
+.env
+.env.local
+*.log
+*.swp
+__pycache__/
+.DS_Store
