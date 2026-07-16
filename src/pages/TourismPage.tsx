@@ -2,54 +2,66 @@ import React from 'react';
 
 export var TourismPage = function() {
   var stats = [
-    { value: '28', label: 'Atrativos', sublabel: 'Turísticos cadastrados' },
-    { value: '152k', label: 'Visitantes', sublabel: 'Mês de julho/2025' },
-    { value: '78%', label: 'Ocupação', sublabel: 'Hotéis municipais' },
+    { value: '28', label: 'Atrativos', sublabel: 'Turisticos cadastrados' },
+    { value: '152k', label: 'Visitantes', sublabel: 'Mes de julho/2025' },
+    { value: '78%', label: 'Ocupacao', sublabel: 'Hotes municipais' },
     { value: 'R$ 45M', label: 'Receita', sublabel: 'Turismo em 2025' },
   ];
 
   var attractions = [
-    { name: 'Praia de Aracaju', type: 'Litoral', visitors: '50.000/mês' },
-    { name: 'Parque das Emas', type: 'Ecológico', visitors: '12.000/mês' },
-    { name: 'Catedral Metropolitana', type: 'Religioso', visitors: '8.500/mês' },
+    { name: 'Praia de Aracaju', type: 'Litoral', visitors: '50.000/mes' },
+    { name: 'Parque das Emas', type: 'Ecologico', visitors: '12.000/mes' },
+    { name: 'Catedral Metropolitana', type: 'Religioso', visitors: '8.500/mes' },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative py-20 bg-geometric-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-overlay-pattern" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">Setor de Turismo</h1>
-            <p className="text-xl opacity-95">Atrativos, visitantes e desenvolvimento turístico em Aracaju</p>
+    <div className="min-h-screen">
+      <section className="hero" style={{ minHeight: '50vh' }}>
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              Dados Publicos
+            </div>
+            <h1 className="hero-title">Setor de <span>Turismo</span></h1>
+            <p className="hero-subtitle">Atrativos, visitantes e desenvolvimento turistico em Aracaju</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map(function(stat, idx) {
-            return (
-              <div key={idx} className="p-6 text-center shadow-elegant bg-card animate-scale-in" style={{ animationDelay: (idx * 100) + 'ms' }}>
-                <div className="text-4xl font-bold text-accent mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold mb-1 text-card-foreground">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
-              </div>
-            );
-          })}
-        </div>
+      <section className="section section-white">
+        <div className="container">
+          <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
+            {stats.map(function(stat, idx) {
+              return (
+                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value" style={{ color: 'var(--accent-mint-dark)' }}>{stat.value}</div>
+                  <div className="kpi-label">{stat.label}</div>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                </div>
+              );
+            })}
+          </div>
 
-        <h2 className="text-3xl font-bold mb-8 text-foreground">Principais Atrativos</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {attractions.map(function(attraction) {
-            return (
-              <div key={attraction.name} className="p-6 rounded-lg shadow-soft bg-muted">
-                <h3 className="text-xl font-bold mb-2 text-card-foreground">{attraction.name}</h3>
-                <p className="text-muted-foreground mb-3">{attraction.type}</p>
-                <span className="text-sm text-primary font-semibold">{attraction.visitors}</span>
-              </div>
-            );
-          })}
+          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
+            <h2>Principais Atrativos</h2>
+          </div>
+          <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
+            {attractions.map(function(attraction) {
+              return (
+                <div key={attraction.name} className="service-card" style={{ cursor: 'default' }}>
+                  <div className="service-icon" style={{ background: 'rgba(127,219,200,0.15)', color: 'var(--accent-mint-dark)' }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                  </div>
+                  <h3>{attraction.name}</h3>
+                  <p style={{ marginBottom: '0.75rem' }}>{attraction.type}</p>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9375rem' }}>
+                    {attraction.visitors}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

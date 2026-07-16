@@ -1,70 +1,92 @@
-import React, { useState } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from 'react';
 
 var navigation = [
-  { path: '/', label: 'Início' },
-  { path: '/saude', label: 'Saúde' },
-  { path: '/educacao', label: 'Educação' },
-  { path: '/turismo', label: 'Turismo' },
-  { path: '/economia', label: 'Economia' },
-  { path: '/dados', label: 'Dados Completos' },
-  { path: '/sobre', label: 'Sobre' },
-  { path: '/contato', label: 'Contato' },
+  { path: 'home', label: 'Inicio' },
+  { path: 'saude', label: 'Saude' },
+  { path: 'educacao', label: 'Educacao' },
+  { path: 'turismo', label: 'Turismo' },
+  { path: 'economia', label: 'Economia' },
 ];
 
-export var Header = function() {
+export var Header = function(props) {
+  var onNavigate = props.onNavigate;
   var mobileMenuOpenState = useState(false);
   var mobileMenuOpen = mobileMenuOpenState[0];
   var setMobileMenuOpen = mobileMenuOpenState[1];
 
+  var scrolledState = useState(false);
+  var scrolled = scrolledState[0];
+  var setScrolled = scrolledState[1];
+
+  useEffect(function() {
+    var handleScroll = function() {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return function() { window.removeEventListener('scroll', handleScroll); };
+  }, []);
+
+  var handleNav = function(path) {
+    if (onNavigate) onNavigate(path);
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-soft">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center space-x-3 transition-transform hover:scale-105">
-            <div className="h-12 w-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">OA</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Observatório</h1>
-              <p className="text-xs text-muted-foreground">Prefeitura de Aracaju</p>
+    <header className={'header' + (scrolled ? ' scrolled' : '')} role="banner">
+      <div className="container">
+        <div className="header-inner">
+          <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Observatorio de Aracaju - Pagina inicial">
+            <div className="logo-icon" aria-hidden="true">OA</div>
+            <div className="logo-text">
+              <span className="logo-title">Observatorio</span>
+              <span className="logo-subtitle">Prefeitura de Aracaju</span>
             </div>
           </a>
-          <nav className="hidden md:flex items-center space-x-1">
+
+          <nav className="nav-desktop" role="navigation" aria-label="Menu principal">
             {navigation.map(function(item) {
               return (
-                <a key={item.path} href={item.path} className="px-4 py-2 rounded-md text-sm font-medium text-foreground hover:bg-primary/10 transition-all">
+                <a key={item.path} href={'#' + item.path} className="nav-link" onClick={function(e) { e.preventDefault(); handleNav(item.path); }}>
                   {item.label}
                 </a>
               );
             })}
           </nav>
+
+          <button className="btn-header-cta" onClick={function() { handleNav('economia'); }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Acesso ao Cidadao
+          </button>
+
           <button
+            className="btn-mobile-menu"
             onClick={function() { setMobileMenuOpen(!mobileMenuOpen); }}
-            className="md:hidden p-2 rounded-md hover:bg-primary/10 transition-all"
-            aria-label="Menu"
+            aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6 text-primary" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             ) : (
-              <Bars3Icon className="h-6 w-6 text-primary" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             )}
           </button>
         </div>
-      </div>
-      {mobileMenuOpen && (
-        <nav className="md:hidden py-4 animate-fade-in bg-background border-t border-border">
-          <div className="flex flex-col space-y-2 px-4">
+
+        {mobileMenuOpen && (
+          <nav className="nav-mobile open" role="navigation" aria-label="Menu mobile">
             {navigation.map(function(item) {
               return (
-                <a key={item.path} href={item.path} onClick={function() { setMobileMenuOpen(false); }} className="py-2 px-4 rounded-md text-foreground hover:bg-primary/10 transition-all">
+                <a key={item.path} href={'#' + item.path} className="nav-mobile-link" onClick={function(e) { e.preventDefault(); handleNav(item.path); }}>
                   {item.label}
                 </a>
               );
             })}
-          </div>
-        </nav>
-      )}
+            <button className="nav-mobile-cta" onClick={function() { handleNav('economia'); }}>
+              Acesso ao Cidadao
+            </button>
+          </nav>
+        )}
+      </div>
     </header>
   );
 };

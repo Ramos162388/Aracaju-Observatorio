@@ -4,8 +4,8 @@ export var EconomyPage = function() {
   var stats = [
     { value: '35,5%', label: 'PIB Sergipe', sublabel: 'Concentrado em Aracaju' },
     { value: '898', label: 'Novas Empresas', sublabel: 'Setores monitorados 2025' },
-    { value: '97,4%', label: 'Microempresas', sublabel: 'Força do empreendedorismo local' },
-    { value: 'R$ 300Mi', label: 'Microcrédito', sublabel: 'Crediamigo em Sergipe' },
+    { value: '97,4%', label: 'Microempresas', sublabel: 'Forca do empreendedorismo local' },
+    { value: 'R$ 300Mi', label: 'Microcredito', sublabel: 'Crediamigo em Sergipe' },
   ];
 
   var sectors = [
@@ -15,45 +15,50 @@ export var EconomyPage = function() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative py-20 bg-geometric-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-overlay-pattern" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">Setor Econômico</h1>
-            <p className="text-xl opacity-95">PIB, empreendedorismo e indicadores de desenvolvimento econômico</p>
+    <div className="min-h-screen">
+      <section className="hero" style={{ minHeight: '50vh' }}>
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Dados Publicos
+            </div>
+            <h1 className="hero-title">Setor <span>Economico</span></h1>
+            <p className="hero-subtitle">PIB, empreendedorismo e indicadores de desenvolvimento economico</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map(function(stat, idx) {
-            return (
-              <div key={idx} className="p-6 text-center shadow-elegant bg-card animate-scale-in" style={{ animationDelay: (idx * 100) + 'ms' }}>
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold mb-1 text-card-foreground">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
-              </div>
-            );
-          })}
-        </div>
-
-        <h2 className="text-3xl font-bold mb-8 text-foreground">Crescimento Empresarial</h2>
-        <div className="space-y-6">
-          {sectors.map(function(item) {
-            return (
-              <div key={item.sector} className="p-6 rounded-lg shadow-soft bg-muted">
-                <div className="flex justify-between items-center mb-3">
-                  <div>
-                    <span className="text-xl font-bold text-card-foreground">{item.sector}</span>
-                    <span className="text-sm text-muted-foreground block">{item.details}</span>
-                  </div>
-                  <span className="text-2xl font-bold text-primary">{item.growth}</span>
+      <section className="section section-white">
+        <div className="container">
+          <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
+            {stats.map(function(stat, idx) {
+              return (
+                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value" style={{ color: 'var(--primary)' }}>{stat.value}</div>
+                  <div className="kpi-label">{stat.label}</div>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
+            <h2>Crescimento Empresarial</h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {sectors.map(function(item) {
+              return (
+                <div key={item.sector} className="service-card" style={{ cursor: 'default', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{item.sector}</h3>
+                    <p style={{ fontSize: '0.875rem', marginBottom: 0 }}>{item.details}</p>
+                  </div>
+                  <span style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--primary)' }}>{item.growth}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

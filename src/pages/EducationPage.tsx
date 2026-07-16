@@ -3,8 +3,8 @@ import React from 'react';
 export var EducationPage = function() {
   var stats = [
     { value: '87', label: 'Escolas Municipais', sublabel: 'Ensino fundamental' },
-    { value: '42k', label: 'Matrículas', sublabel: 'Alunos ativos' },
-    { value: '94%', label: 'Frequência', sublabel: 'Média mensal' },
+    { value: '42k', label: 'Matriculas', sublabel: 'Alunos ativos' },
+    { value: '94%', label: 'Frequencia', sublabel: 'Media mensal' },
     { value: '3,2k', label: 'Professores', sublabel: 'Efetivos e contratados' },
   ];
 
@@ -14,48 +14,55 @@ export var EducationPage = function() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative py-20 bg-geometric-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-overlay-pattern" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white animate-fade-in">
-            <h1 className="text-5xl font-bold mb-6">Setor de Educação</h1>
-            <p className="text-xl opacity-95">Dados educacionais e infraestrutura escolar em Aracaju</p>
+    <div className="min-h-screen">
+      <section className="hero" style={{ minHeight: '50vh' }}>
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Dados Publicos
+            </div>
+            <h1 className="hero-title">Setor de <span>Educacao</span></h1>
+            <p className="hero-subtitle">Dados educacionais e infraestrutura escolar em Aracaju</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map(function(stat, idx) {
-            return (
-              <div key={idx} className="p-6 text-center shadow-elegant bg-card animate-scale-in" style={{ animationDelay: (idx * 100) + 'ms' }}>
-                <div className="text-4xl font-bold text-secondary mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold mb-1 text-card-foreground">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
-              </div>
-            );
-          })}
-        </div>
+      <section className="section section-white">
+        <div className="container">
+          <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
+            {stats.map(function(stat, idx) {
+              return (
+                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value" style={{ color: 'var(--secondary)' }}>{stat.value}</div>
+                  <div className="kpi-label">{stat.label}</div>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                </div>
+              );
+            })}
+          </div>
 
-        <h2 className="text-3xl font-bold mb-8 text-foreground">Principais Indicadores</h2>
-        <div className="space-y-6">
-          {indicators.map(function(item) {
-            return (
-              <div key={item.name} className="p-6 rounded-lg shadow-soft bg-muted">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-card-foreground font-semibold">{item.name}</span>
-                  <span className="text-sm text-muted-foreground">{item.change}</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 bg-border rounded-full h-3">
-                    <div className="bg-secondary h-3 rounded-full transition-all" style={{ width: item.width }} />
+          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
+            <h2>Principais Indicadores</h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {indicators.map(function(item) {
+              return (
+                <div key={item.name} className="service-card" style={{ cursor: 'default' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                    <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>{item.name}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--gray-500)' }}>{item.change}</span>
                   </div>
-                  <span className="text-2xl font-bold text-secondary">{item.value}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <div style={{ flex: 1, height: '12px', background: 'var(--gray-200)', borderRadius: '9999px', overflow: 'hidden' }}>
+                      <div style={{ height: '100%', background: 'linear-gradient(90deg, var(--secondary), var(--secondary-light))', borderRadius: '9999px', width: item.width }} />
+                    </div>
+                    <span style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--secondary)', minWidth: '3rem', textAlign: 'right' }}>{item.value}</span>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>
