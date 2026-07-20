@@ -2,9 +2,7 @@ import React from 'react';
 
 export var Footer = function(props) {
   var onNavigate = props.onNavigate;
-  var handleNav = function(path) {
-    if (onNavigate) onNavigate(path);
-  };
+  var handleNav = function(path) { if (onNavigate) onNavigate(path); };
 
   return (
     <footer className="footer" role="contentinfo">
@@ -15,7 +13,6 @@ export var Footer = function(props) {
             <h3>Observatorio de Aracaju</h3>
             <p>Portal de transparencia e dados publicos da Prefeitura Municipal de Aracaju. Acompanhe os indicadores de Saude, Educacao, Turismo e Economia da cidade.</p>
           </div>
-
           <div>
             <h4>Setores</h4>
             <ul className="footer-links">
@@ -25,7 +22,6 @@ export var Footer = function(props) {
               <li><a href="#economia" onClick={function(e) { e.preventDefault(); handleNav('economia'); }}>Economia</a></li>
             </ul>
           </div>
-
           <div>
             <h4>Institucional</h4>
             <ul className="footer-links">
@@ -35,7 +31,6 @@ export var Footer = function(props) {
               <li><a href="#">Ouvidoria</a></li>
             </ul>
           </div>
-
           <div>
             <h4>Contato</h4>
             <div className="footer-contact-item">
@@ -58,20 +53,15 @@ export var Footer = function(props) {
             </div>
           </div>
         </div>
-
         <div className="footer-bottom">
           <p>&copy; 2025 Prefeitura Municipal de Aracaju. Todos os direitos reservados.</p>
           <div className="footer-badges">
             <div className="footer-badge">
-              <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
               Acessibilidade WCAG 2.1
             </div>
             <div className="footer-badge">
-              <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              </span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
               Lei de Acesso a Informacao
             </div>
           </div>

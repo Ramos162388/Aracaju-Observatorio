@@ -7,7 +7,6 @@ export var EconomyPage = function() {
     { value: '97,4%', label: 'Microempresas', sublabel: 'Forca do empreendedorismo local' },
     { value: 'R$ 300Mi', label: 'Microcredito', sublabel: 'Crediamigo em Sergipe' },
   ];
-
   var sectors = [
     { sector: 'Tecnologia', growth: '+38,5%', details: '54 novas empresas TI' },
     { sector: 'Pet Market', growth: '+11%', details: '70 novas empresas pet' },
@@ -28,33 +27,31 @@ export var EconomyPage = function() {
           </div>
         </div>
       </section>
-
-      <section className="section section-white">
+      <section className="section section-gradient">
         <div className="container">
           <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
             {stats.map(function(stat, idx) {
               return (
-                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
-                  <div className="kpi-value" style={{ color: 'var(--primary)' }}>{stat.value}</div>
+                <div key={idx} className={'kpi-card ' + (idx % 2 === 0 ? 'dark' : 'amber') + ' animate-fade-in-up'} style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value">{stat.value}</div>
                   <div className="kpi-label">{stat.label}</div>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                  <p style={{ fontSize: '0.875rem', opacity: 0.75, marginTop: '0.25rem' }}>{stat.sublabel}</p>
                 </div>
               );
             })}
           </div>
-
           <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
-            <h2>Crescimento Empresarial</h2>
+            <h2 style={{ color: 'var(--color-primary)' }}>Crescimento Empresarial</h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {sectors.map(function(item) {
               return (
                 <div key={item.sector} className="service-card" style={{ cursor: 'default', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{item.sector}</h3>
+                    <h3 style={{ color: 'var(--color-primary)', fontSize: '1.25rem', marginBottom: '0.25rem' }}>{item.sector}</h3>
                     <p style={{ fontSize: '0.875rem', marginBottom: 0 }}>{item.details}</p>
                   </div>
-                  <span style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--primary)' }}>{item.growth}</span>
+                  <span style={{ fontSize: '1.75rem', fontWeight: 900, color: 'var(--color-orange)' }}>{item.growth}</span>
                 </div>
               );
             })}

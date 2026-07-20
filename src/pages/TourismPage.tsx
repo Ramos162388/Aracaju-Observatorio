@@ -7,7 +7,6 @@ export var TourismPage = function() {
     { value: '78%', label: 'Ocupacao', sublabel: 'Hotes municipais' },
     { value: 'R$ 45M', label: 'Receita', sublabel: 'Turismo em 2025' },
   ];
-
   var attractions = [
     { name: 'Praia de Aracaju', type: 'Litoral', visitors: '50.000/mes' },
     { name: 'Parque das Emas', type: 'Ecologico', visitors: '12.000/mes' },
@@ -28,36 +27,32 @@ export var TourismPage = function() {
           </div>
         </div>
       </section>
-
-      <section className="section section-white">
+      <section className="section section-gradient">
         <div className="container">
           <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
             {stats.map(function(stat, idx) {
               return (
-                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
-                  <div className="kpi-value" style={{ color: 'var(--accent-mint-dark)' }}>{stat.value}</div>
+                <div key={idx} className={'kpi-card ' + (idx % 2 === 0 ? 'light' : 'dark') + ' animate-fade-in-up'} style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value">{stat.value}</div>
                   <div className="kpi-label">{stat.label}</div>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                  <p style={{ fontSize: '0.875rem', opacity: 0.75, marginTop: '0.25rem' }}>{stat.sublabel}</p>
                 </div>
               );
             })}
           </div>
-
           <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
-            <h2>Principais Atrativos</h2>
+            <h2 style={{ color: 'var(--color-primary)' }}>Principais Atrativos</h2>
           </div>
-          <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
-            {attractions.map(function(attraction) {
+          <div className="services-grid">
+            {attractions.map(function(a) {
               return (
-                <div key={attraction.name} className="service-card" style={{ cursor: 'default' }}>
-                  <div className="service-icon" style={{ background: 'rgba(127,219,200,0.15)', color: 'var(--accent-mint-dark)' }}>
+                <div key={a.name} className="service-card" style={{ cursor: 'default' }}>
+                  <div className="service-icon" style={{ background: 'rgba(127,219,200,0.15)', color: 'var(--color-teal-dark)' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                   </div>
-                  <h3>{attraction.name}</h3>
-                  <p style={{ marginBottom: '0.75rem' }}>{attraction.type}</p>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--primary)', fontWeight: 600, fontSize: '0.9375rem' }}>
-                    {attraction.visitors}
-                  </span>
+                  <h3 style={{ color: 'var(--color-primary)' }}>{a.name}</h3>
+                  <p style={{ marginBottom: '0.75rem' }}>{a.type}</p>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-orange)', fontWeight: 700, fontSize: '0.9375rem' }}>{a.visitors}</span>
                 </div>
               );
             })}

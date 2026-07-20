@@ -13,15 +13,12 @@ export var Header = function(props) {
   var mobileMenuOpenState = useState(false);
   var mobileMenuOpen = mobileMenuOpenState[0];
   var setMobileMenuOpen = mobileMenuOpenState[1];
-
   var scrolledState = useState(false);
   var scrolled = scrolledState[0];
   var setScrolled = scrolledState[1];
 
   useEffect(function() {
-    var handleScroll = function() {
-      setScrolled(window.scrollY > 10);
-    };
+    var handleScroll = function() { setScrolled(window.scrollY > 10); };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return function() { window.removeEventListener('scroll', handleScroll); };
   }, []);
@@ -35,14 +32,13 @@ export var Header = function(props) {
     <header className={'header' + (scrolled ? ' scrolled' : '')} role="banner">
       <div className="container">
         <div className="header-inner">
-          <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Observatorio de Aracaju - Pagina inicial">
+          <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Observatorio de Aracaju">
             <div className="logo-icon" aria-hidden="true">OA</div>
             <div className="logo-text">
               <span className="logo-title">Observatorio</span>
               <span className="logo-subtitle">Prefeitura de Aracaju</span>
             </div>
           </a>
-
           <nav className="nav-desktop" role="navigation" aria-label="Menu principal">
             {navigation.map(function(item) {
               return (
@@ -52,18 +48,11 @@ export var Header = function(props) {
               );
             })}
           </nav>
-
           <button className="btn-header-cta" onClick={function() { handleNav('economia'); }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
             Acesso ao Cidadao
           </button>
-
-          <button
-            className="btn-mobile-menu"
-            onClick={function() { setMobileMenuOpen(!mobileMenuOpen); }}
-            aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-            aria-expanded={mobileMenuOpen}
-          >
+          <button className="btn-mobile-menu" onClick={function() { setMobileMenuOpen(!mobileMenuOpen); }} aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={mobileMenuOpen}>
             {mobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             ) : (
@@ -71,7 +60,6 @@ export var Header = function(props) {
             )}
           </button>
         </div>
-
         {mobileMenuOpen && (
           <nav className="nav-mobile open" role="navigation" aria-label="Menu mobile">
             {navigation.map(function(item) {
@@ -81,9 +69,7 @@ export var Header = function(props) {
                 </a>
               );
             })}
-            <button className="nav-mobile-cta" onClick={function() { handleNav('economia'); }}>
-              Acesso ao Cidadao
-            </button>
+            <button className="nav-mobile-cta" onClick={function() { handleNav('economia'); }}>Acesso ao Cidadao</button>
           </nav>
         )}
       </div>

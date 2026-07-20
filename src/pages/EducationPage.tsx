@@ -7,7 +7,6 @@ export var EducationPage = function() {
     { value: '94%', label: 'Frequencia', sublabel: 'Media mensal' },
     { value: '3,2k', label: 'Professores', sublabel: 'Efetivos e contratados' },
   ];
-
   var indicators = [
     { name: 'IDEB Iniciais', value: '5,8', change: '+0,3 vs 2023', width: '58%' },
     { name: 'IDEB Finais', value: '4,9', change: '+0,2 vs 2023', width: '49%' },
@@ -27,37 +26,35 @@ export var EducationPage = function() {
           </div>
         </div>
       </section>
-
-      <section className="section section-white">
+      <section className="section section-gradient">
         <div className="container">
           <div className="kpi-grid" style={{ marginBottom: '4rem' }}>
             {stats.map(function(stat, idx) {
               return (
-                <div key={idx} className="kpi-card animate-fade-in-up" style={{ animationDelay: idx * 100 + 'ms' }}>
-                  <div className="kpi-value" style={{ color: 'var(--secondary)' }}>{stat.value}</div>
+                <div key={idx} className={'kpi-card ' + (idx % 2 === 0 ? 'amber' : 'dark') + ' animate-fade-in-up'} style={{ animationDelay: idx * 100 + 'ms' }}>
+                  <div className="kpi-value">{stat.value}</div>
                   <div className="kpi-label">{stat.label}</div>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                  <p style={{ fontSize: '0.875rem', opacity: 0.75, marginTop: '0.25rem' }}>{stat.sublabel}</p>
                 </div>
               );
             })}
           </div>
-
           <div className="section-header" style={{ textAlign: 'left', margin: '0 0 2rem' }}>
-            <h2>Principais Indicadores</h2>
+            <h2 style={{ color: 'var(--color-primary)' }}>Principais Indicadores</h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {indicators.map(function(item) {
               return (
                 <div key={item.name} className="service-card" style={{ cursor: 'default' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>{item.name}</span>
-                    <span style={{ fontSize: '0.875rem', color: 'var(--gray-500)' }}>{item.change}</span>
+                    <span style={{ fontWeight: 700, color: 'var(--color-gray-900)' }}>{item.name}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--color-gray-500)' }}>{item.change}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ flex: 1, height: '12px', background: 'var(--gray-200)', borderRadius: '9999px', overflow: 'hidden' }}>
-                      <div style={{ height: '100%', background: 'linear-gradient(90deg, var(--secondary), var(--secondary-light))', borderRadius: '9999px', width: item.width }} />
+                    <div style={{ flex: 1, height: '12px', background: 'var(--color-gray-200)', borderRadius: '9999px', overflow: 'hidden' }}>
+                      <div style={{ height: '100%', background: 'linear-gradient(90deg, var(--color-orange), var(--color-amber))', borderRadius: '9999px', width: item.width }} />
                     </div>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--secondary)', minWidth: '3rem', textAlign: 'right' }}>{item.value}</span>
+                    <span style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--color-orange)', minWidth: '3rem', textAlign: 'right' }}>{item.value}</span>
                   </div>
                 </div>
               );
