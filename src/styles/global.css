@@ -99,6 +99,16 @@ p + p { margin-top: 1rem; }
 .nav-link::after { content: ''; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: var(--color-primary); border-radius: 1px; transition: width var(--transition); }
 .nav-link:hover::after { width: 60%; }
 .nav-link:hover { color: var(--color-primary); background: rgba(0,105,102,0.06); }
+
+/* Nav Select Dropdown */
+.nav-select-wrapper { position: relative; display: inline-flex; align-items: center; }
+.nav-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background: transparent; border: 1px solid var(--color-gray-300); border-radius: var(--radius-sm); color: var(--color-gray-700); cursor: pointer; font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 500; padding: 7px 32px 7px 14px; transition: all var(--transition-fast); min-width: 140px; }
+.nav-select:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.nav-select:focus { border-color: var(--color-teal); outline: none; box-shadow: 0 0 0 3px rgba(127,219,200,0.2); }
+.nav-select-chevron { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--color-gray-500); transition: color var(--transition-fast); }
+.nav-select-wrapper:hover .nav-select-chevron { color: var(--color-primary); }
+.nav-mobile-divider { height: 1px; background: var(--color-gray-200); margin: 0.5rem 0; }
+.nav-mobile-label { display: block; padding: 6px 16px; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-gray-500); }
 .btn-header-cta { display: none; align-items: center; gap: 8px; padding: 10px 22px; background: linear-gradient(135deg, var(--color-orange), var(--color-amber)); color: white; font-weight: 700; font-size: 0.9375rem; border-radius: var(--radius-sm); transition: all var(--transition); box-shadow: 0 4px 14px rgba(255,140,66,0.35); position: relative; overflow: hidden; }
 @media (min-width: 1024px) { .btn-header-cta { display: inline-flex; } }
 .btn-header-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent); opacity: 0; transition: opacity var(--transition); }
