@@ -35,7 +35,7 @@ export var TourismPage = function() {
                 <div key={idx} className={'kpi-card ' + (idx % 2 === 0 ? 'light' : 'dark') + ' animate-fade-in-up'} style={{ animationDelay: idx * 100 + 'ms' }}>
                   <div className="kpi-value">{stat.value}</div>
                   <div className="kpi-label">{stat.label}</div>
-                  <p style={{ fontSize: '0.875rem', opacity: 0.75, marginTop: '0.25rem' }}>{stat.sublabel}</p>
+                  <p className="kpi-sublabel">{stat.sublabel}</p>
                 </div>
               );
             })}
