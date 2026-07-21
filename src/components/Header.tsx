@@ -53,7 +53,7 @@ export var Header = function(props) {
             <a href="#home" className="nav-link" onClick={function(e) { e.preventDefault(); handleNav('home'); }}>Inicio</a>
             <div className="nav-select-wrapper">
               <select className="nav-select" value={selected} onChange={handleSelect} aria-label="Selecionar secretaria">
-                <option value="">Secretarias</option>
+                <option value="">Orgaos</option>
                 {departments.map(function(d) {
                   return React.createElement('option', { key: d.path, value: d.path }, d.label);
                 })}
@@ -77,7 +77,7 @@ export var Header = function(props) {
           <nav className="nav-mobile open" role="navigation" aria-label="Menu mobile">
             <a href="#home" className="nav-mobile-link" onClick={function(e) { e.preventDefault(); handleNav('home'); }}>Inicio</a>
             <div className="nav-mobile-divider"></div>
-            <span className="nav-mobile-label">Secretarias</span>
+            <span className="nav-mobile-label">Orgaos</span>
             {departments.map(function(d) {
               return (
                 <a key={d.path} href={'#' + d.path} className="nav-mobile-link" onClick={function(e) { e.preventDefault(); handleNav(d.path); }}>
