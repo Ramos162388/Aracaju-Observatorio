@@ -230,7 +230,7 @@ export var App = function() {
           ),
           React.createElement('hr', { className: 'section-divider' }),
           /* KPIs */
-          React.createElement('section', { className: 'section section-gradient', 'aria-label': 'Indicadores' },
+          React.createElement('section', { className: 'section section-gradient kpi-section decorative-dots', 'aria-label': 'Indicadores' },
             React.createElement('div', { className: 'container' },
               React.createElement('div', { className: 'section-header' },
                 React.createElement('span', { className: 'section-badge' },
