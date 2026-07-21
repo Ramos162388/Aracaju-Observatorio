@@ -6,6 +6,7 @@ import { EducationPage } from './pages/EducationPage';
 import { TourismPage } from './pages/TourismPage';
 import { EconomyPage } from './pages/EconomyPage';
 import { EsgapPage } from './pages/EsgapPage';
+import { FundatPage } from './pages/FundatPage';
 
 
 function useCounter(end, duration) {
@@ -209,6 +210,7 @@ export var App = function() {
       case 'turismo': return React.createElement(TourismPage, null);
       case 'economia': return React.createElement(EconomyPage, null);
       case 'esgap': return React.createElement(EsgapPage, null);
+      case 'fundat': return React.createElement(FundatPage, null);
 
       default:
         return React.createElement('main', { id: 'main-content', role: 'main' },
