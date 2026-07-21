@@ -3,7 +3,7 @@
    Modern · High Contrast · Glassmorphism
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap');
 
 /* === DESIGN TOKENS === */
 :root {
@@ -182,61 +182,52 @@ p + p { margin-top: 1rem; }
 .decorative-line { width: 60px; height: 3px; background: linear-gradient(90deg, var(--color-primary), var(--color-teal)); border-radius: 2px; margin: 1.5rem 0; }
 .decorative-line-center { margin: 1.5rem auto; }
 
-/* === KPI CARDS v3 - Glassmorphism === */
-.kpi-section { position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 0%, rgba(168,230,207,0.25), var(--color-gray-50) 70%), radial-gradient(var(--color-teal) 1px, transparent 1px); background-size: auto, 24px 24px; }
-.kpi-section::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,105,102,0.1), transparent 70%); top: -120px; right: -100px; pointer-events: none; z-index: 0; }
-.kpi-section::after { content: ''; position: absolute; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(127,219,200,0.12), transparent 70%); bottom: -80px; left: -80px; pointer-events: none; z-index: 0; }
+/* === KPI SECTION - Dashboard/Tech Panel === */
+.kpi-section { position: relative; overflow: hidden; background: linear-gradient(160deg, #003332 0%, var(--color-primary-dark) 30%, var(--color-primary) 100%); }
+.kpi-section::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px); pointer-events: none; z-index: 0; }
+.kpi-section::after { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(127,219,200,0.06), transparent 70%); bottom: -200px; right: -100px; pointer-events: none; z-index: 0; }
 .kpi-section .container { position: relative; z-index: 1; }
+.kpi-section .section-header h2 { color: var(--color-mint); }
+.kpi-section .section-header p { color: rgba(168,230,207,0.7); }
+.kpi-section .section-badge { background: rgba(127,219,200,0.12); color: var(--color-teal); }
 
 .kpi-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 1.5rem; }
 @media (min-width: 640px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .kpi-grid { grid-template-columns: repeat(4, 1fr); } }
 
-.kpi-card { border-radius: var(--radius-lg); padding: 2rem; transition: all var(--transition-slow); position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.35); }
+/* === DASHBOARD KPI CARD === */
+.kpi-card { padding: 1.75rem; transition: all var(--transition-slow); position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(0,77,74,0.95), rgba(0,105,102,0.9)); border: 1px solid rgba(127,219,200,0.2); clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px); box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(127,219,200,0.1); }
+.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--color-teal), var(--color-amber), transparent); opacity: 0.6; }
+.kpi-card::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(127,219,200,0.02) 3px, rgba(127,219,200,0.02) 4px); pointer-events: none; }
+.kpi-card:hover { transform: translateY(-4px); border-color: rgba(127,219,200,0.4); box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(127,219,200,0.2); }
+.kpi-card:hover::before { opacity: 1; }
 
-.kpi-card.dark { background: var(--color-primary); color: white; box-shadow: 0 8px 32px rgba(0,105,102,0.3), 0 2px 8px rgba(0,0,0,0.1); }
-.kpi-card.dark:hover { transform: translateY(-6px); box-shadow: 0 12px 48px rgba(0,105,102,0.4), 0 4px 16px rgba(0,0,0,0.12); }
-.kpi-card.dark .kpi-value { color: white; }
-.kpi-card.dark .kpi-label { color: rgba(255,255,255,0.85); }
-.kpi-card.dark .kpi-icon { background: rgba(255,255,255,0.18); color: var(--color-amber); }
-.kpi-card.dark .kpi-trend-up { background: rgba(127,219,200,0.25); color: var(--color-teal); }
-.kpi-card.dark .kpi-trend-down { background: rgba(255,140,66,0.25); color: var(--color-orange); }
+/* LED Status Dot */
+.kpi-led { position: absolute; top: 12px; right: 12px; width: 8px; height: 8px; border-radius: 50%; z-index: 2; }
+.kpi-led-up { background: var(--color-teal); box-shadow: 0 0 6px rgba(127,219,200,0.6); animation: ledPulse 2s ease-in-out infinite; }
+.kpi-led-down { background: var(--color-orange); box-shadow: 0 0 6px rgba(255,140,66,0.6); animation: ledPulse 2s ease-in-out infinite; }
 
-.kpi-card.light { background: var(--color-mint); color: var(--color-primary-dark); box-shadow: 0 8px 32px rgba(168,230,207,0.25), 0 2px 8px rgba(0,0,0,0.06); }
-.kpi-card.light:hover { transform: translateY(-6px); box-shadow: 0 12px 48px rgba(168,230,207,0.35), 0 4px 16px rgba(0,0,0,0.08); }
-.kpi-card.light .kpi-value { color: var(--color-primary-dark); }
-.kpi-card.light .kpi-label { color: rgba(0,77,74,0.85); }
-.kpi-card.light .kpi-icon { background: rgba(0,105,102,0.15); color: var(--color-primary); }
-.kpi-card.light .kpi-trend-up { background: rgba(0,105,102,0.15); color: var(--color-primary-dark); }
-.kpi-card.light .kpi-trend-down { background: rgba(230,122,53,0.15); color: var(--color-orange-dark); }
+.kpi-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+.kpi-icon { width: 44px; height: 44px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(168,230,207,0.08); color: var(--color-mint); border: 1px solid rgba(168,230,207,0.12); }
+.kpi-icon svg { filter: drop-shadow(0 0 4px rgba(168,230,207,0.3)); }
 
-.kpi-card.amber { background: var(--color-amber); color: var(--color-gray-900); box-shadow: 0 8px 32px rgba(255,209,102,0.25), 0 2px 8px rgba(0,0,0,0.06); }
-.kpi-card.amber:hover { transform: translateY(-6px); box-shadow: 0 12px 48px rgba(255,209,102,0.35), 0 4px 16px rgba(0,0,0,0.08); }
-.kpi-card.amber .kpi-value { color: var(--color-primary-dark); }
-.kpi-card.amber .kpi-label { color: rgba(0,77,74,0.85); }
-.kpi-card.amber .kpi-icon { background: rgba(0,105,102,0.15); color: var(--color-primary-dark); }
-.kpi-card.amber .kpi-trend-up { background: rgba(0,105,102,0.18); color: var(--color-primary-dark); }
-.kpi-card.amber .kpi-trend-down { background: rgba(230,122,53,0.18); color: var(--color-orange-dark); }
+/* Oscilloscope SVG Sparkline */
+.kpi-oscilloscope { width: 80px; height: 32px; opacity: 0.7; flex-shrink: 0; }
+.kpi-oscilloscope path { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px currentColor); }
 
-.kpi-card.glass { background: var(--color-white); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
-.kpi-card.glass .kpi-value { color: var(--color-primary-dark); }
-.kpi-card.glass .kpi-label { color: rgba(0,77,74,0.85); }
-.kpi-card.glass .kpi-icon { background: rgba(0,105,102,0.12); color: var(--color-primary); }
-.kpi-card.glass .kpi-trend-up { background: rgba(0,105,102,0.12); color: var(--color-primary-dark); }
-.kpi-card.glass .kpi-trend-down { background: rgba(230,122,53,0.12); color: var(--color-orange-dark); }
-
-.kpi-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.25rem; }
-.kpi-icon { width: 52px; height: 52px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.kpi-sparkline { display: flex; align-items: flex-end; gap: 2px; height: 32px; opacity: 0.5; }
-.kpi-sparkline-bar { width: 4px; border-radius: 2px; background: currentColor; }
 .kpi-body { }
-.kpi-value { font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 900; line-height: 1; margin-bottom: 0.35rem; letter-spacing: -0.04em; }
-.kpi-label { font-size: 0.9375rem; font-weight: 500; margin-bottom: 0.75rem; }
+.kpi-value { font-family: 'JetBrains Mono', monospace; font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 800; line-height: 1; margin-bottom: 0.25rem; letter-spacing: 0.04em; text-shadow: 0 0 12px rgba(255,255,255,0.15); }
+.kpi-card .kpi-value { color: var(--color-amber); text-shadow: 0 0 16px rgba(255,209,102,0.2), 0 0 4px rgba(255,209,102,0.1); }
+.kpi-label { font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.03em; margin-bottom: 0.75rem; color: rgba(168,230,207,0.75); }
 .kpi-footer { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
-.kpi-trend { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8125rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); }
-.kpi-trend-up { }
-.kpi-trend-down { }
-.kpi-trend-svg { width: 14px; height: 14px; }
+
+/* Flicker Count Animation */
+.kpi-value.flicker { animation: flicker 0.15s ease 3; }
+
+.kpi-trend { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 0.02em; }
+.kpi-trend-up { background: rgba(127,219,200,0.12); color: var(--color-teal); border: 1px solid rgba(127,219,200,0.2); }
+.kpi-trend-down { background: rgba(255,140,66,0.12); color: var(--color-orange); border: 1px solid rgba(255,140,66,0.2); }
+.kpi-trend-svg { width: 12px; height: 12px; }
 
 /* === SERVICE CARDS === */
 .services-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 1.5rem; }
@@ -326,6 +317,8 @@ p + p { margin-top: 1rem; }
 @keyframes shimmer { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
 @keyframes pulse-subtle { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
 @keyframes countUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes flicker { 0%, 100% { opacity: 1; } 25% { opacity: 0.7; } 50% { opacity: 1; } 75% { opacity: 0.8; } }
+@keyframes ledPulse { 0%, 100% { opacity: 0.8; box-shadow: 0 0 6px currentColor; } 50% { opacity: 1; box-shadow: 0 0 12px currentColor, 0 0 20px currentColor; } }
 
 .animate-fade-in-up { animation: fadeInUp 0.6s ease forwards; }
 .animate-scale-in { animation: scaleIn 0.5s ease forwards; }

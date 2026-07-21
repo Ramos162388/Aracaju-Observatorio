@@ -24,33 +24,35 @@ function useCounter(end, duration) {
   return value;
 }
 
-var sparklineData = [
+var oscData = [
   [12, 18, 14, 22, 20, 28, 24, 32],
   [8, 12, 18, 14, 22, 20, 26, 30],
   [15, 10, 18, 14, 22, 20, 24, 28],
   [6, 14, 10, 18, 16, 22, 20, 26],
 ];
 
-function SparklineBars(props) {
+function OscilloscopePath(props) {
   var data = props.data || [4, 8, 6, 12, 10, 14, 12, 18];
+  var w = 80, h = 32;
   var max = Math.max.apply(null, data);
-  return React.createElement('div', { className: 'kpi-sparkline', 'aria-hidden': 'true' },
-    data.map(function(v, i) {
-      var h = Math.max(4, (v / max) * 28);
-      return React.createElement('span', {
-        key: i,
-        className: 'kpi-sparkline-bar',
-        style: { height: h + 'px', opacity: 0.3 + (v / max) * 0.5 }
-      });
-    })
+  var min = Math.min.apply(null, data);
+  var range = max - min || 1;
+  var spacing = w / (data.length - 1);
+  var points = data.map(function(v, i) {
+    var x = i * spacing;
+    var y = h - ((v - min) / range) * (h - 6) - 3;
+    return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1);
+  });
+  return React.createElement('svg', { className: 'kpi-oscilloscope', viewBox: '0 0 ' + w + ' ' + h, 'aria-hidden': 'true' },
+    React.createElement('path', { d: points.join(' '), stroke: 'currentColor' })
   );
 }
 
 var kpis = [
-  { value: 355, suffix: '%', label: 'PIB de Sergipe em Aracaju', change: '+2.3%', up: true, icon: 'chart', variant: 'dark', sparkline: sparklineData[0] },
-  { value: 898, suffix: '', label: 'Novas Empresas em 2025', change: '+18%', up: true, icon: 'building', variant: 'amber', sparkline: sparklineData[1] },
-  { value: 42, suffix: 'k', label: 'Alunos Matriculados', change: '+5%', up: true, icon: 'users', variant: 'light', sparkline: sparklineData[2] },
-  { value: 152, suffix: 'k', label: 'Visitantes Mensais', change: '+32%', up: true, icon: 'globe', variant: 'dark', sparkline: sparklineData[3] },
+  { value: 355, suffix: '%', label: 'PIB de Sergipe em Aracaju', change: '+2.3%', up: true, icon: 'chart', sparkline: oscData[0] },
+  { value: 898, suffix: '', label: 'Novas Empresas em 2025', change: '+18%', up: true, icon: 'building', sparkline: oscData[1] },
+  { value: 42, suffix: 'k', label: 'Alunos Matriculados', change: '+5%', up: true, icon: 'users', sparkline: oscData[2] },
+  { value: 152, suffix: 'k', label: 'Visitantes Mensais', change: '+32%', up: true, icon: 'globe', sparkline: oscData[3] },
 ];
 
 var services = [
@@ -72,23 +74,31 @@ function KpiCard(props) {
   var kpi = props.kpi;
   var val = useCounter(kpi.value, 2000);
   var prefix = kpi.value === 355 ? '' : '';
+  var flickerRef = useRef(null);
+  useEffect(function() {
+    if (flickerRef.current) {
+      flickerRef.current.classList.add('flicker');
+      var t = setTimeout(function() { if (flickerRef.current) flickerRef.current.classList.remove('flicker'); }, 500);
+      return function() { clearTimeout(t); };
+    }
+  }, [val]);
   var icons = {
-    chart: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+    chart: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '22', height: '22', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
       React.createElement('polyline', { points: '22 7 13.5 15.5 8.5 10.5 2 17' }),
       React.createElement('polyline', { points: '16 7 22 7 22 13' })
     ),
-    building: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+    building: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '22', height: '22', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
       React.createElement('rect', { x: '4', y: '2', width: '16', height: '20', rx: '2' }),
       React.createElement('path', { d: 'M9 22v-4h6v4' }),
       React.createElement('path', { d: 'M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01' })
     ),
-    users: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+    users: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '22', height: '22', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
       React.createElement('path', { d: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' }),
       React.createElement('circle', { cx: '9', cy: '7', r: '4' }),
       React.createElement('path', { d: 'M22 21v-2a4 4 0 0 0-3-3.87' }),
       React.createElement('path', { d: 'M16 3.13a4 4 0 0 1 0 7.75' })
     ),
-    globe: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '26', height: '26', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+    globe: React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '22', height: '22', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
       React.createElement('circle', { cx: '12', cy: '12', r: '10' }),
       React.createElement('line', { x1: '2', y1: '12', x2: '22', y2: '12' }),
       React.createElement('path', { d: 'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z' })
@@ -103,13 +113,14 @@ function KpiCard(props) {
         React.createElement('polyline', { points: '23 18 13.5 8.5 8.5 13.5 1 6' }),
         React.createElement('polyline', { points: '17 18 23 18 23 12' })
       );
-  return React.createElement('div', { className: 'kpi-card ' + kpi.variant + ' animate-fade-in-up', style: { animationDelay: props.delay + 'ms' } },
+  return React.createElement('div', { className: 'kpi-card animate-fade-in-up', style: { animationDelay: props.delay + 'ms' } },
+    React.createElement('span', { className: 'kpi-led ' + (kpi.up ? 'kpi-led-up' : 'kpi-led-down') }),
     React.createElement('div', { className: 'kpi-top' },
       React.createElement('div', { className: 'kpi-icon' }, icons[kpi.icon]),
-      React.createElement(SparklineBars, { data: kpi.sparkline })
+      React.createElement(OscilloscopePath, { data: kpi.sparkline })
     ),
     React.createElement('div', { className: 'kpi-body' },
-      React.createElement('div', { className: 'kpi-value' }, prefix, val, kpi.suffix),
+      React.createElement('div', { className: 'kpi-value', ref: flickerRef }, prefix, val, kpi.suffix),
       React.createElement('div', { className: 'kpi-label' }, kpi.label)
     ),
     React.createElement('div', { className: 'kpi-footer' },
