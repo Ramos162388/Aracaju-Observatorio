@@ -5,6 +5,8 @@ import { HealthPage } from './pages/HealthPage';
 import { EducationPage } from './pages/EducationPage';
 import { TourismPage } from './pages/TourismPage';
 import { EconomyPage } from './pages/EconomyPage';
+import { EsgapPage } from './pages/EsgapPage';
+import { SemedPage } from './pages/SemedPage';
 
 function useCounter(end, duration) {
   var frameRef = useRef(0);
@@ -206,6 +208,8 @@ export var App = function() {
       case 'educacao': return React.createElement(EducationPage, null);
       case 'turismo': return React.createElement(TourismPage, null);
       case 'economia': return React.createElement(EconomyPage, null);
+      case 'esgap': return React.createElement(EsgapPage, null);
+      case 'semed': return React.createElement(SemedPage, null);
       default:
         return React.createElement('main', { id: 'main-content', role: 'main' },
           /* HERO */
