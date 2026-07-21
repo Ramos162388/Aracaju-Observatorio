@@ -6,7 +6,7 @@ var departments = [
   { path: 'turismo', label: 'Turismo' },
   { path: 'economia', label: 'Economia' },
   { path: 'esgap', label: 'ESGAP' },
-  { path: 'semed', label: 'SEMED' },
+
 ];
 
 export var Header = function(props) {
