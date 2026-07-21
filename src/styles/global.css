@@ -183,7 +183,7 @@ p + p { margin-top: 1rem; }
 .decorative-line-center { margin: 1.5rem auto; }
 
 /* === KPI CARDS v3 - Glassmorphism === */
-.kpi-section { position: relative; overflow: hidden; }
+.kpi-section { position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 0%, rgba(168,230,207,0.25), var(--color-gray-50) 70%), radial-gradient(var(--color-teal) 1px, transparent 1px); background-size: auto, 24px 24px; }
 .kpi-section::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,105,102,0.1), transparent 70%); top: -120px; right: -100px; pointer-events: none; z-index: 0; }
 .kpi-section::after { content: ''; position: absolute; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(127,219,200,0.12), transparent 70%); bottom: -80px; left: -80px; pointer-events: none; z-index: 0; }
 .kpi-section .container { position: relative; z-index: 1; }
