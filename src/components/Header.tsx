@@ -43,12 +43,8 @@ export var Header = function(props) {
     <header className={'header' + (scrolled ? ' scrolled' : '')} role="banner">
       <div className="container">
         <div className="header-inner">
-          <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Observatório de Aracaju">
-            <div className="logo-icon" aria-hidden="true">OA</div>
-            <div className="logo-text">
-              <span className="logo-title">Observatorio</span>
-              <span className="logo-subtitle">Prefeitura de Aracaju</span>
-            </div>
+          <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Prefeitura de Aracaju">
+            <img src="logo_aracaju.svg" alt="Prefeitura de Aracaju" width="150" />
           </a>
           <nav className="nav-desktop" role="navigation" aria-label="Menu principal">
             <a href="#home" className="nav-link" onClick={function(e) { e.preventDefault(); handleNav('home'); }}>Início</a>
