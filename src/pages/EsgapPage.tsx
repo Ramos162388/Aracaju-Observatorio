@@ -11,14 +11,14 @@ export var EsgapPage = function() {
               Dados Públicos
             </div>
             <h1 className="hero-title">ESGAP</h1>
-            <p className="hero-subtitle">Secretaria Municipal da Educação, Esporte e Lazer - Dados e indicadores</p>
+            <p className="hero-subtitle">Escola de Governo e Administração Pública</p>
           </div>
         </div>
       </section>
       <section className="section section-gradient" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ color: 'var(--color-primary)', marginBottom: '1rem' }}>ESGAP</h2>
-          <p style={{ fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>Dados e indicadores da Secretaria Municipal da Educação, Esporte e Lazer de Aracaju em breve.</p>
+           <p style={{ fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>Dados e indicadores da Escola de Governo e Administração Pública de Aracaju em breve.</p>
         </div>
       </section>
     </div>
