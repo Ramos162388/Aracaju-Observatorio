@@ -11,14 +11,14 @@ export var FundatPage = function() {
               Dados Públicos
             </div>
             <h1 className="hero-title">FUNDAT</h1>
-            <p className="hero-subtitle">Fundação de Cultura, Esporte e Turismo de Aracaju - Dados e indicadores</p>
+            <p className="hero-subtitle">Fundação Municipal de Formação para o Trabalho</p>
           </div>
         </div>
       </section>
       <section className="section section-gradient" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ color: 'var(--color-primary)', marginBottom: '1rem' }}>FUNDAT</h2>
-          <p style={{ fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>Dados e indicadores da Fundação de Cultura, Esporte e Turismo de Aracaju em breve.</p>
+           <p style={{ fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>Dados e indicadores da Fundação Municipal de Formação para o Trabalho de Aracaju em breve.</p>
         </div>
       </section>
     </div>
