@@ -2,14 +2,14 @@ import React from 'react';
 
 export var TourismPage = function() {
   var stats = [
-    { value: '28', label: 'Atrativos', sublabel: 'Turisticos cadastrados' },
-    { value: '152k', label: 'Visitantes', sublabel: 'Mes de julho/2025' },
-    { value: '78%', label: 'Ocupacao', sublabel: 'Hotes municipais' },
+    { value: '28', label: 'Atrativos', sublabel: 'Turísticos cadastrados' },
+    { value: '152k', label: 'Visitantes', sublabel: 'Mês de julho/2025' },
+    { value: '78%', label: 'Ocupação', sublabel: 'Hotéis municipais' },
     { value: 'R$ 45M', label: 'Receita', sublabel: 'Turismo em 2025' },
   ];
   var attractions = [
     { name: 'Praia de Aracaju', type: 'Litoral', visitors: '50.000/mes' },
-    { name: 'Parque das Emas', type: 'Ecologico', visitors: '12.000/mes' },
+    { name: 'Parque das Emas', type: 'Ecológico', visitors: '12.000/mês' },
     { name: 'Catedral Metropolitana', type: 'Religioso', visitors: '8.500/mes' },
   ];
 
@@ -20,10 +20,10 @@ export var TourismPage = function() {
           <div className="hero-content">
             <div className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              Dados Publicos
+              Dados Públicos
             </div>
             <h1 className="hero-title">Setor de <span>Turismo</span></h1>
-            <p className="hero-subtitle">Atrativos, visitantes e desenvolvimento turistico em Aracaju</p>
+            <p className="hero-subtitle">Atrativos, visitantes e desenvolvimento turístico em Aracaju</p>
           </div>
         </div>
       </section>

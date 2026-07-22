@@ -2,14 +2,14 @@ import React from 'react';
 
 export var HealthPage = function() {
   var stats = [
-    { value: '15', label: 'Unidades de Saude', sublabel: 'UAPS e postos' },
-    { value: '89%', label: 'Vacinacao', sublabel: 'Cobertura basica' },
+    { value: '15', label: 'Unidades de Saúde', sublabel: 'UAPS e postos' },
+    { value: '89%', label: 'Vacinação', sublabel: 'Cobertura basica' },
     { value: '3,4k', label: 'Atendimentos/mes', sublabel: 'Urgencia e emergencia' },
-    { value: '12', label: 'Hospitais', sublabel: 'Publicos e privados' },
+    { value: '12', label: 'Hospitais', sublabel: 'Públicos e privados' },
   ];
   var indicators = [
     { name: 'Atendimentos UBS', rate: '92%', change: '+5% vs 2024', width: '92%' },
-    { name: 'Vacinacao Infantil', rate: '89%', change: '+8% vs 2024', width: '89%' },
+    { name: 'Vacinação Infantil', rate: '89%', change: '+8% vs 2024', width: '89%' },
   ];
 
   return (
@@ -19,10 +19,10 @@ export var HealthPage = function() {
           <div className="hero-content">
             <div className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-              Dados Publicos
+              Dados Públicos
             </div>
-            <h1 className="hero-title">Setor de <span>Saude</span></h1>
-            <p className="hero-subtitle">Indicadores de saude publica e gestao hospitalar em Aracaju</p>
+            <h1 className="hero-title">Setor de <span>Saúde</span></h1>
+            <p className="hero-subtitle">Indicadores de saúde pública e gestão hospitalar em Aracaju</p>
           </div>
         </div>
       </section>

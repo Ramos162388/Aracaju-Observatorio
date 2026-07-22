@@ -3,8 +3,8 @@ import React from 'react';
 export var EducationPage = function() {
   var stats = [
     { value: '87', label: 'Escolas Municipais', sublabel: 'Ensino fundamental' },
-    { value: '42k', label: 'Matriculas', sublabel: 'Alunos ativos' },
-    { value: '94%', label: 'Frequencia', sublabel: 'Media mensal' },
+    { value: '42k', label: 'Matrículas', sublabel: 'Alunos ativos' },
+    { value: '94%', label: 'Frequência', sublabel: 'Média mensal' },
     { value: '3,2k', label: 'Professores', sublabel: 'Efetivos e contratados' },
   ];
   var indicators = [
@@ -19,9 +19,9 @@ export var EducationPage = function() {
           <div className="hero-content">
             <div className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-              Dados Publicos
+              Dados Públicos
             </div>
-            <h1 className="hero-title">Setor de <span>Educacao</span></h1>
+            <h1 className="hero-title">Setor de <span>Educação</span></h1>
             <p className="hero-subtitle">Dados educacionais e infraestrutura escolar em Aracaju</p>
           </div>
         </div>

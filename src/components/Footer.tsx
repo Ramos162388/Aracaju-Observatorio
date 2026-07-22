@@ -10,14 +10,14 @@ export var Footer = function(props) {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="logo-icon" aria-hidden="true">OA</div>
-            <h3>Observatorio de Aracaju</h3>
-            <p>Portal de transparencia e dados publicos da Prefeitura Municipal de Aracaju. Acompanhe os indicadores de Saude, Educacao, Turismo e Economia da cidade.</p>
+            <h3>Observatório de Aracaju</h3>
+            <p>Portal de transparência e dados públicos da Prefeitura Municipal de Aracaju. Acompanhe os indicadores de Saúde, Educação, Turismo e Economia da cidade.</p>
           </div>
           <div>
             <h4>Setores</h4>
             <ul className="footer-links">
-              <li><a href="#saude" onClick={function(e) { e.preventDefault(); handleNav('saude'); }}>Saude</a></li>
-              <li><a href="#educacao" onClick={function(e) { e.preventDefault(); handleNav('educacao'); }}>Educacao</a></li>
+              <li><a href="#saude" onClick={function(e) { e.preventDefault(); handleNav('saude'); }}>Saúde</a></li>
+              <li><a href="#educacao" onClick={function(e) { e.preventDefault(); handleNav('educacao'); }}>Educação</a></li>
               <li><a href="#turismo" onClick={function(e) { e.preventDefault(); handleNav('turismo'); }}>Turismo</a></li>
               <li><a href="#economia" onClick={function(e) { e.preventDefault(); handleNav('economia'); }}>Economia</a></li>
               <li><a href="#esgap" onClick={function(e) { e.preventDefault(); handleNav('esgap'); }}>ESGAP</a></li>
@@ -27,9 +27,9 @@ export var Footer = function(props) {
           <div>
             <h4>Institucional</h4>
             <ul className="footer-links">
-              <li><a href="#">Sobre o Observatorio</a></li>
+              <li><a href="#">Sobre o Observatório</a></li>
               <li><a href="#">Dados Abertos</a></li>
-              <li><a href="#">Acesso a Informacao</a></li>
+              <li><a href="#">Acesso à Informação</a></li>
               <li><a href="#">Ouvidoria</a></li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export var Footer = function(props) {
             </div>
             <div className="footer-badge">
               <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
-              Lei de Acesso a Informacao
+              Lei de Acesso à Informação
             </div>
           </div>
         </div>

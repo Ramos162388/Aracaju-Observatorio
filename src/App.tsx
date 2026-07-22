@@ -59,18 +59,18 @@ var kpis = [
 ];
 
 var services = [
-  { title: 'Saude Publica', description: 'Dados sobre unidades de saude, vacinacao, atendimentos e indicadores epidemiologicos de Aracaju.', icon: 'health', path: 'saude' },
-  { title: 'Educacao', description: 'Escolas municipais, matriculas, desempenho academico e infraestrutura educacional.', icon: 'education', path: 'educacao' },
-  { title: 'Turismo', description: 'Atrativos turisticos, visitantes, ocupacao hoteleira e impacto economico do turismo.', icon: 'tourism', path: 'turismo' },
-  { title: 'Economia', description: 'PIB, empregos, microcreditos e indicadores de desenvolvimento economico local.', icon: 'economy', path: 'economia' },
-  { title: 'Dados Abertos', description: 'Acesse conjuntos de dados publicos para pesquisas, estudos e desenvolvimento de solucoes.', icon: 'data', path: 'home' },
-  { title: 'Transparencia', description: 'Acompanhe gastos publicos, licitacoes, contratos e prestacao de contas municipais.', icon: 'transparency', path: 'home' },
+  { title: 'Saúde Pública', description: 'Dados sobre unidades de saúde, vacinação, atendimentos e indicadores epidemiológicos de Aracaju.', icon: 'health', path: 'saude' },
+  { title: 'Educação', description: 'Escolas municipais, matrículas, desempenho acadêmico e infraestrutura educacional.', icon: 'education', path: 'educacao' },
+  { title: 'Turismo', description: 'Atrativos turísticos, visitantes, ocupação hoteleira e impacto econômico do turismo.', icon: 'tourism', path: 'turismo' },
+  { title: 'Economia', description: 'PIB, empregos, microcréditos e indicadores de desenvolvimento econômico local.', icon: 'economy', path: 'economia' },
+  { title: 'Dados Abertos', description: 'Acesse conjuntos de dados públicos para pesquisas, estudos e desenvolvimento de soluções.', icon: 'data', path: 'home' },
+  { title: 'Transparência', description: 'Acompanhe gastos públicos, licitações, contratos e prestação de contas municipais.', icon: 'transparency', path: 'home' },
 ];
 
 var news = [
   { title: 'Crescimento de 38,5% no Setor de Tecnologia', description: 'Aracaju lidera crescimento de empresas de tecnologia em Sergipe com 54 novas startups.', tag: 'Economia', date: '10 Jul 2025', color: 'linear-gradient(135deg, #006966, #008580)' },
-  { title: 'Cobertura Vacinal atinge 89% na Capital', description: 'Meta de vacinacao infantil superada com campanha de vacinacao municipal.', tag: 'Saude', date: '08 Jul 2025', color: 'linear-gradient(135deg, #7FDBC8, #A8E6CF)' },
-  { title: 'Novo Parque Ecologico e Inaugurado', description: 'Parque das Emas ganha nova area de lazer com investimento de R$ 2.5 milhoes.', tag: 'Turismo', date: '05 Jul 2025', color: 'linear-gradient(135deg, #FFD166, #FF8C42)' },
+  { title: 'Cobertura Vacinal Atinge 89% na Capital', description: 'Meta de vacinação infantil superada com campanha de vacinação municipal.', tag: 'Saúde', date: '08 Jul 2025', color: 'linear-gradient(135deg, #7FDBC8, #A8E6CF)' },
+  { title: 'Novo Parque Ecológico é Inaugurado', description: 'Parque das Emas ganha nova área de lazer com investimento de R$ 2,5 milhões.', tag: 'Turismo', date: '05 Jul 2025', color: 'linear-gradient(135deg, #FFD166, #FF8C42)' },
 ];
 
 function KpiCard(props) {
@@ -228,19 +228,19 @@ export var App = function() {
                     React.createElement('circle', { cx: '12', cy: '12', r: '10' }),
                     React.createElement('path', { d: 'm9 12 2 2 4-4' })
                   ),
-                  'Portal Oficial de Dados Publicos'
+                  'Portal Oficial de Dados Públicos'
                 ),
-                React.createElement('h1', { className: 'hero-title' }, 'Observatorio de ', React.createElement('span', null, 'Aracaju')),
-                React.createElement('p', { className: 'hero-subtitle' }, 'Dados publicos para transparencia e desenvolvimento. Acompanhe indicadores de Saude, Educacao, Turismo e Economia da capital sergipana.'),
+                React.createElement('h1', { className: 'hero-title' }, 'Observatório de ', React.createElement('span', null, 'Aracaju')),
+                React.createElement('p', { className: 'hero-subtitle' }, 'Dados públicos para transparência e desenvolvimento. Acompanhe indicadores de Saúde, Educação, Turismo e Economia da capital sergipana.'),
                 React.createElement('div', { className: 'hero-actions' },
                   React.createElement('button', { className: 'btn btn-cta btn-lg', onClick: function() { navigateTo('economia'); } },
                     React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
                       React.createElement('polyline', { points: '22 7 13.5 15.5 8.5 10.5 2 17' }),
                       React.createElement('polyline', { points: '16 7 22 7 22 13' })
                     ),
-                    'Ver Dados Economicos'
+                    'Ver Dados Econômicos'
                   ),
-                  React.createElement('button', { className: 'btn btn-outline btn-lg', onClick: function() { navigateTo('saude'); } }, 'Dados de Saude')
+                  React.createElement('button', { className: 'btn btn-outline btn-lg', onClick: function() { navigateTo('saude'); } }, 'Dados de Saúde')
                 )
               )
             )
@@ -254,7 +254,7 @@ export var App = function() {
                   React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '14', height: '14', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
                     React.createElement('polyline', { points: '22 7 13.5 15.5 8.5 10.5 2 17' })
                   ),
-                  'Numeros que Importam'
+                  'Números que Importam'
                 ),
                 React.createElement('h2', null, 'Indicadores Principais'),
                 React.createElement('p', null, 'Dados em tempo real sobre os principais indicadores de desenvolvimento de Aracaju.')
@@ -278,8 +278,8 @@ export var App = function() {
                   ),
                   'Acesse os Setores'
                 ),
-                React.createElement('h2', null, 'Servicos Principais'),
-                React.createElement('p', null, 'Explore dados e indicadores de cada setor da administracao municipal.')
+                React.createElement('h2', null, 'Serviços Principais'),
+                React.createElement('p', null, 'Explore dados e indicadores de cada setor da administração municipal.')
               ),
               React.createElement('div', { className: 'services-grid' },
                 services.map(function(s, idx) { return React.createElement(ServiceCard, { key: idx, service: s, delay: idx * 80, onNavigate: navigateTo }); })
@@ -296,10 +296,10 @@ export var App = function() {
                     React.createElement('path', { d: 'M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z' }),
                     React.createElement('circle', { cx: '12', cy: '13', r: '3' })
                   ),
-                  'Ultimas Noticias'
+                  'Últimas Notícias'
                 ),
-                React.createElement('h2', null, 'Destaques e Transparencia'),
-                React.createElement('p', null, 'Fique por dentro das principais noticias e dados publicos de Aracaju.')
+                React.createElement('h2', null, 'Destaques e Transparência'),
+                React.createElement('p', null, 'Fique por dentro das principais notícias e dados públicos de Aracaju.')
               ),
               React.createElement('div', { className: 'highlights-grid' },
                 news.map(function(item, idx) { return React.createElement(HighlightCard, { key: idx, item: item, delay: idx * 100 }); })
@@ -311,8 +311,8 @@ export var App = function() {
             React.createElement('div', { className: 'container' },
               React.createElement('div', { className: 'transparency-banner' },
                 React.createElement('div', null,
-                  React.createElement('h3', null, 'Compromisso com a Transparencia'),
-                  React.createElement('p', null, 'Todos os dados sao atualizados periodicamente e seguem o padrao da Lei de Acesso a Informacao (LAI).')
+                  React.createElement('h3', null, 'Compromisso com a Transparência'),
+                  React.createElement('p', null, 'Todos os dados são atualizados periodicamente e seguem o padrão da Lei de Acesso à Informação (LAI).')
                 ),
                 React.createElement('button', { className: 'btn btn-primary' },
                   React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '18', height: '18', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
@@ -333,14 +333,14 @@ export var App = function() {
                   React.createElement('div', { className: 'cta-decoration' }),
                   React.createElement('div', { className: 'cta-decoration-2' }),
                   React.createElement('h3', null, 'Uma Nova Cidade'),
-                  React.createElement('p', null, 'O Observatorio de Aracaju e uma ferramenta de inteligencia que consolida dados e indicadores estrategicos sobre a cidade.'),
-                  React.createElement('button', { className: 'btn btn-white btn-lg', onClick: function() { navigateTo('economia'); } }, 'Ver Relatorios Completos')
+                  React.createElement('p', null, 'O Observatório de Aracaju é uma ferramenta de inteligência que consolida dados e indicadores estratégicos sobre a cidade.'),
+                  React.createElement('button', { className: 'btn btn-white btn-lg', onClick: function() { navigateTo('economia'); } }, 'Ver Relatórios Completos')
                 ),
                 React.createElement('div', { className: 'cta-block mint' },
                   React.createElement('div', { className: 'cta-decoration' }),
                   React.createElement('div', { className: 'cta-decoration-2' }),
                   React.createElement('h3', null, 'Acompanhe o Desenvolvimento'),
-                  React.createElement('p', null, 'Dados atualizados, analises estrategicas e insights para investidores, empreendedores e gestores publicos.'),
+                  React.createElement('p', null, 'Dados atualizados, análises estratégicas e insights para investidores, empreendedores e gestores públicos.'),
                   React.createElement('button', { className: 'btn btn-primary btn-lg', onClick: function() { navigateTo('educacao'); } }, 'Explorar Dados')
                 )
               )
@@ -351,7 +351,7 @@ export var App = function() {
   };
 
   return React.createElement('div', { className: 'min-h-screen', style: { display: 'flex', flexDirection: 'column' } },
-    React.createElement('a', { href: '#main-content', className: 'skip-link' }, 'Pular para o conteudo principal'),
+    React.createElement('a', { href: '#main-content', className: 'skip-link' }, 'Pular para o conteúdo principal'),
     React.createElement(Header, { onNavigate: navigateTo }),
     React.createElement('div', { style: { flex: 1 } }, renderPage()),
     React.createElement(Footer, { onNavigate: navigateTo })

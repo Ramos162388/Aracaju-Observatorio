@@ -4,8 +4,8 @@ export var EconomyPage = function() {
   var stats = [
     { value: '35,5%', label: 'PIB Sergipe', sublabel: 'Concentrado em Aracaju' },
     { value: '898', label: 'Novas Empresas', sublabel: 'Setores monitorados 2025' },
-    { value: '97,4%', label: 'Microempresas', sublabel: 'Forca do empreendedorismo local' },
-    { value: 'R$ 300Mi', label: 'Microcredito', sublabel: 'Crediamigo em Sergipe' },
+    { value: '97,4%', label: 'Microempresas', sublabel: 'Força do empreendedorismo local' },
+    { value: 'R$ 300Mi', label: 'Microcrédito', sublabel: 'Crediamigo em Sergipe' },
   ];
   var sectors = [
     { sector: 'Tecnologia', growth: '+38,5%', details: '54 novas empresas TI' },
@@ -20,10 +20,10 @@ export var EconomyPage = function() {
           <div className="hero-content">
             <div className="hero-badge">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              Dados Publicos
+              Dados Públicos
             </div>
-            <h1 className="hero-title">Setor <span>Economico</span></h1>
-            <p className="hero-subtitle">PIB, empreendedorismo e indicadores de desenvolvimento economico</p>
+            <h1 className="hero-title">Setor <span>Econômico</span></h1>
+            <p className="hero-subtitle">PIB, empreendedorismo e indicadores de desenvolvimento econômico</p>
           </div>
         </div>
       </section>
