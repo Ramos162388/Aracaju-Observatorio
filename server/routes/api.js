@@ -89,4 +89,19 @@ router.get('/health', function(req, res) {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+var fs = require('fs');
+var path = require('path');
+router.get('/mulher/dashboard', function(req, res) {
+  var mulherPath = path.join(__dirname, '..', 'data', 'mulher.json');
+  try {
+    if (fs.existsSync(mulherPath)) {
+      var data = JSON.parse(fs.readFileSync(mulherPath, 'utf8'));
+      return res.json(data);
+    }
+  } catch (e) {
+    console.error('Erro ao ler mulher.json:', e.message);
+  }
+  res.status(500).json({ error: 'Dados indisponiveis' });
+});
+
 module.exports = router;

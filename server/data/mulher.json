@@ -1,0 +1,61 @@
+{
+  "ultimaAtualizacao": "2026-07-24T16:05:27.860791",
+  "fonte": "Secretaria Municipal do Respeito às Políticas para as Mulheres (SerMulher)",
+  "periodo": "1º Semestre 2026",
+  "kpis": [
+    { "value": "53,2%", "label": "População Feminina", "sublabel": "Mulheres em Aracaju" },
+    { "value": "42,8%", "label": "Chefes de Família", "sublabel": "Lares chefiados por mulheres" },
+    { "value": "61,4%", "label": "Ensino Superior", "sublabel": "Das matrículas no ensino superior" },
+    { "value": "34,6%", "label": "Empreendedoras", "sublabel": "Dos CNPJs ativos na capital" }
+  ],
+  "cramBalanco": {
+    "titulo": "Balanço CRAM — 1º Semestre 2026",
+    "descricao": "Centro de Referência de Atendimento à Mulher",
+    "destaques": [
+      { "label": "Crescimento na demanda", "valor": "Alto", "periodo": "março a maio/2026", "direcao": "up" },
+      { "label": "Maior procura por atendimentos", "valor": "Maio/2026", "periodo": "Pico no semestre", "direcao": "up" },
+      { "label": "Abandono no acompanhamento", "valor": "~50%", "periodo": "Média do semestre", "direcao": "down" },
+      { "label": "Reincidência no ciclo de violência", "valor": "~50%", "periodo": "Média mensal", "direcao": "down" }
+    ],
+    "atendimentosMensais": [
+      { "mes": "Janeiro", "psicologico": "Médio", "socioassistencial": "Alto", "juridico": "Médio", "tendencia": "Médio" },
+      { "mes": "Fevereiro", "psicologico": "Médio", "socioassistencial": "Médio", "juridico": "Médio", "tendencia": "Médio" },
+      { "mes": "Março", "psicologico": "Alto", "socioassistencial": "Médio", "juridico": "Alto", "tendencia": "Alto" },
+      { "mes": "Abril", "psicologico": "Médio", "socioassistencial": "Alto", "juridico": "Alto", "tendencia": "Alto" },
+      { "mes": "Maio", "psicologico": "Alto", "socioassistencial": "Alto", "juridico": "Alto", "tendencia": "Muito Alto" },
+      { "mes": "Junho", "psicologico": "Alto", "socioassistencial": "Médio", "juridico": "Médio", "tendencia": "Alto" }
+    ],
+    "taxas": [
+      { "nome": "Abandono", "valor": 50, "label": "50%" },
+      { "nome": "Reincidência", "valor": 50, "label": "50%" }
+    ],
+    "servicos": [
+      { "tipo": "Psicológico", "descricao": "Atendimentos de saúde mental e suporte emocional", "destaque": "Maior demanda em março, maio e junho" },
+      { "tipo": "Socioassistencial", "descricao": "Apoio social e orientação para reconstrução de trajetórias", "destaque": "Maior volume em janeiro, abril e maio" },
+      { "tipo": "Jurídico", "descricao": "Orientações legais e acompanhamento processual", "destaque": "Concentração entre março e maio" },
+      { "tipo": "Busca Ativa", "descricao": "Estratégia para localizar mulheres encaminhadas que não compareceram", "destaque": "Ação contínua ao longo do semestre" }
+    ]
+  },
+  "noticias": [
+    { "titulo": "Grupos Reflexivos promovem responsabilização de autores de violência doméstica", "data": "13/07/2026", "categoria": "Prevenção", "url": "https://sermulher.aracaju.se.gov.br/grupos-reflexivos-promovem-responsabilizacao-de-autores-de-violencia-domestica-e-ajudam-a-prevenir-reincidencia/" },
+    { "titulo": "SerMulher levará acolhimento especializado à maior semana da engenharia do país", "data": "14/07/2026", "categoria": "Acolhimento", "url": "https://sermulher.aracaju.se.gov.br/" },
+    { "titulo": "SerMulher inicia novo ciclo de rodas terapêuticas para fortalecer autonomia", "data": "15/07/2026", "categoria": "Saúde Mental", "url": "https://sermulher.aracaju.se.gov.br/" },
+    { "titulo": "Campanha da Prefeitura de Aracaju reforça combate ao assédio durante o Forró Caju", "data": "25/06/2026", "categoria": "Campanha", "url": "https://sermulher.aracaju.se.gov.br/" },
+    { "titulo": "Prefeitura fortalece políticas públicas com escuta qualificada de mulheres atendidas pelo CRAM", "data": "10/06/2026", "categoria": "Políticas Públicas", "url": "https://sermulher.aracaju.se.gov.br/prefeitura-fortalece-politicas-publicas-com-escuta-qualificada-de-mulheres-atendidas-pelo-cram/" },
+    { "titulo": "Cartão CMais Mulher: inscrições começam na próxima segunda-feira", "data": "20/05/2026", "categoria": "Benefício", "url": "https://sermulher.aracaju.se.gov.br/" }
+  ],
+  "canaisApoio": [
+    { "canal": "Ligue 180", "descricao": "Central de Atendimento à Mulher", "cor": "var(--color-primary)" },
+    { "canal": "Disque 100", "descricao": "Direitos Humanos", "cor": "var(--color-orange)" },
+    { "canal": "CRAM Aracaju", "descricao": "(79) 3179-1661", "cor": "var(--color-teal)" },
+    { "canal": "Casa da Mulher", "descricao": "Praça Fausto Cardoso, s/n", "cor": "var(--color-amber)" }
+  ],
+  "programas": [
+    { "nome": "Casa da Mulher Brasileira", "descricao": "Acolhimento e atendimento humanizado a mulheres em situação de violência, com serviços integrados de assistência psicossocial, jurídica e de saúde." },
+    { "nome": "Patrulha Maria da Penha", "descricao": "Ronda preventiva especializada da Guarda Municipal que acompanha mulheres com medidas protetivas em Aracaju." },
+    { "nome": "CRAM — Centro de Referência", "descricao": "Centro de Referência de Atendimento à Mulher, oferecendo apoio psicológico, social e orientação jurídica gratuita." },
+    { "nome": "Elas Empreendem", "descricao": "Capacitação em empreendedorismo feminino com cursos de gestão, finanças e marketing para mulheres de baixa renda." },
+    { "nome": "Mãe Aracajuana", "descricao": "Acompanhamento pré-natal e pós-parto com equipe multidisciplinar para gestantes do SUS na capital." },
+    { "nome": "SerMulher Escuta", "descricao": "Canal de escuta qualificada para mulheres em situação de vulnerabilidade, com acolhimento psicológico e social." }
+  ]
+}
