@@ -7,7 +7,7 @@ var departments = [
   { path: 'economia', label: 'Economia' },
   { path: 'esgap', label: 'ESGAP' },
   { path: 'fundat', label: 'FUNDAT' },
-
+  { path: 'mulher', label: 'Mulher' },
 ];
 
 export var Header = function(props) {
@@ -44,7 +44,7 @@ export var Header = function(props) {
       <div className="container">
         <div className="header-inner">
           <a href="#" className="logo" onClick={function(e) { e.preventDefault(); handleNav('home'); }} aria-label="Prefeitura de Aracaju">
-            <img src="logo_aracaju.svg" alt="Prefeitura de Aracaju" width="150" />
+            <img src="logo_aracaju.svg" alt="Prefeitura de Aracaju" className="logo-img" />
           </a>
           <nav className="nav-desktop" role="navigation" aria-label="Menu principal">
             <a href="#home" className="nav-link" onClick={function(e) { e.preventDefault(); handleNav('home'); }}>Início</a>

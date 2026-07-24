@@ -1,0 +1,125 @@
+{
+  "pages": [
+    {
+      "id": 1,
+      "title": "Visão Geral",
+      "icon": "chart",
+      "description": "Principais indicadores macroeconômicos de Aracaju",
+      "stats": [
+        { "value": "35,5%", "label": "PIB Sergipe", "sublabel": "Concentrado em Aracaju" },
+        { "value": "898", "label": "Novas Empresas", "sublabel": "Empresas abertas em 2025" },
+        { "value": "97,4%", "label": "Microempresas", "sublabel": "Força do empreendedorismo local" },
+        { "value": "R$ 300Mi", "label": "Microcrédito", "sublabel": "Crediamigo em Sergipe" }
+      ],
+      "insight": "Aracaju concentra mais de um terço de todo o PIB estadual, com crescimento consistente no empreendedorismo."
+    },
+    {
+      "id": 2,
+      "title": "Crescimento Setorial",
+      "icon": "trending",
+      "description": "Variação percentual na abertura de novas empresas por setor",
+      "sectors": [
+        { "sector": "Tecnologia", "growth": 38.5, "display": "+38,5%", "details": "54 novas empresas de TI", "color": "#006966", "companies": 54 },
+        { "sector": "Beleza", "growth": 16.0, "display": "+16%", "details": "774 novas empresas de beleza", "color": "#FF8C42", "companies": 774 },
+        { "sector": "Pet Market", "growth": 11.0, "display": "+11%", "details": "70 novas empresas pet", "color": "#7FDBC8", "companies": 70 },
+        { "sector": "Alimentação", "growth": 9.5, "display": "+9,5%", "details": "312 novos estabelecimentos", "color": "#FFD166", "companies": 312 },
+        { "sector": "Construção Civil", "growth": 7.2, "display": "+7,2%", "details": "98 novas construtoras", "color": "#A8E6CF", "companies": 98 }
+      ],
+      "insight": "Tecnologia lidera o crescimento com +38,5%, seguida por Beleza e Pet Market — reflexo do empreendedorismo local."
+    },
+    {
+      "id": 3,
+      "title": "Indicadores Econômicos",
+      "icon": "bar",
+      "description": "Taxas e valores referenciais da economia municipal",
+      "indicators": [
+        { "name": "Taxa de Desemprego", "value": "11,2%", "change": "-1.5pp", "period": "1T 2026", "direction": "down" },
+        { "name": "Salário Médio", "value": "R$ 2.850", "change": "+4,2%", "period": "1T 2026", "direction": "up" },
+        { "name": "Exportações", "value": "US$ 48Mi", "change": "+12%", "period": "Acum. 2026", "direction": "up" },
+        { "name": "ICMS Arrecadado", "value": "R$ 1,2Bi", "change": "+6,8%", "period": "Acum. 2026", "direction": "up" },
+        { "name": "Inflação Municipal", "value": "4,1%", "change": "-0.3pp", "period": "12 meses", "direction": "down" },
+        { "name": "Taxa de Ocupação", "value": "62,3%", "change": "+2,1pp", "period": "1T 2026", "direction": "up" }
+      ],
+      "insight": "Queda no desemprego e aumento do salário médio indicam aquecimento da economia local."
+    },
+    {
+      "id": 4,
+      "title": "Tendência Trimestral",
+      "icon": "line",
+      "description": "Evolução trimestral do registro de novas empresas",
+      "quarterlyTrend": [
+        { "quarter": "1T 2024", "empresas": 162 },
+        { "quarter": "2T 2024", "empresas": 178 },
+        { "quarter": "3T 2024", "empresas": 185 },
+        { "quarter": "4T 2024", "empresas": 198 },
+        { "quarter": "1T 2025", "empresas": 210 },
+        { "quarter": "2T 2025", "empresas": 224 },
+        { "quarter": "3T 2025", "empresas": 238 },
+        { "quarter": "4T 2025", "empresas": 256 },
+        { "quarter": "1T 2026", "empresas": 278 }
+      ],
+      "insight": "Crescimento sustentado por 9 trimestres consecutivos, com aceleração a partir do 3T 2025."
+    },
+    {
+      "id": 5,
+      "title": "Mercado de Trabalho",
+      "icon": "users",
+      "description": "Geração de empregos formais por setor",
+      "jobsBySector": [
+        { "sector": "Serviços", "admitidos": 3840, "desligados": 2910, "saldo": 930, "color": "#006966" },
+        { "sector": "Comércio", "admitidos": 2150, "desligados": 1780, "saldo": 370, "color": "#7FDBC8" },
+        { "sector": "Construção", "admitidos": 980, "desligados": 720, "saldo": 260, "color": "#FFD166" },
+        { "sector": "Indústria", "admitidos": 620, "desligados": 480, "saldo": 140, "color": "#FF8C42" },
+        { "sector": "Agropecuária", "admitidos": 180, "desligados": 150, "saldo": 30, "color": "#A8E6CF" }
+      ],
+      "totalSaldo": 1730,
+      "insight": "Setor de serviços é o maior gerador de empregos formais, responsável por 54% do saldo positivo."
+    },
+    {
+      "id": 6,
+      "title": "Finanças Públicas",
+      "icon": "dollar",
+      "description": "Receita e despesa municipal",
+      "publicFinances": [
+        { "category": "Receita Corrente Líquida", "realizado": "R$ 2,8Bi", "crescimento": "+8,2%", "participacao": "100%" },
+        { "category": "Receita Tributária", "realizado": "R$ 980Mi", "crescimento": "+6,5%", "participacao": "35%" },
+        { "category": "Transferências Correntes", "realizado": "R$ 1,5Bi", "crescimento": "+9,1%", "participacao": "54%" },
+        { "category": "Investimentos", "realizado": "R$ 320Mi", "crescimento": "+15%", "participacao": "11,4%" },
+        { "category": "Despesa com Pessoal", "realizado": "R$ 1,4Bi", "crescimento": "+4,3%", "participacao": "50%" }
+      ],
+      "insight": "Investimentos cresceram 15% no período, acima da média de crescimento da receita."
+    },
+    {
+      "id": 7,
+      "title": "Investimentos & Crédito",
+      "icon": "bank",
+      "description": "Microcrédito, financiamentos e investimentos privados",
+      "creditData": [
+        { "programa": "Crediamigo", "contratacoes": 12450, "valorTotal": "R$ 180Mi", "alcance": "48 bairros" },
+        { "programa": "Desenbahia", "contratacoes": 3200, "valorTotal": "R$ 95Mi", "alcance": "24 municípios" },
+        { "programa": "Pronampe", "contratacoes": 1850, "valorTotal": "R$ 42Mi", "alcance": "PEPS" },
+        { "programa": "Finame", "contratacoes": 420, "valorTotal": "R$ 28Mi", "alcance": "Setor industrial" },
+        { "programa": "Microcrédito Municipal", "contratacoes": 2800, "valorTotal": "R$ 12Mi", "alcance": "Aracaju" }
+      ],
+      "totalContratacoes": 20720,
+      "insight": "Crediamigo responde por 60% das contratações de microcrédito na capital."
+    },
+    {
+      "id": 8,
+      "title": "Comparativo Anual",
+      "icon": "calendar",
+      "description": "Evolução ano a ano dos principais indicadores",
+      "yearlyComparison": [
+        { "ano": 2021, "pibMunicipal": "R$ 18,2Bi", "empresasAbertas": 2450, "empregosGerados": 5120, "investimentos": "R$ 180Mi" },
+        { "ano": 2022, "pibMunicipal": "R$ 20,5Bi", "empresasAbertas": 2780, "empregosGerados": 5890, "investimentos": "R$ 210Mi" },
+        { "ano": 2023, "pibMunicipal": "R$ 22,8Bi", "empresasAbertas": 3120, "empregosGerados": 6450, "investimentos": "R$ 255Mi" },
+        { "ano": 2024, "pibMunicipal": "R$ 25,1Bi", "empresasAbertas": 3450, "empregosGerados": 7120, "investimentos": "R$ 295Mi" },
+        { "ano": 2025, "pibMunicipal": "R$ 27,6Bi", "empresasAbertas": 3820, "empregosGerados": 7890, "investimentos": "R$ 320Mi" }
+      ],
+      "insight": "Crescimento médio anual de 8,7% no PIB municipal e 9,3% na geração de empregos desde 2021."
+    }
+  ],
+  "totalPages": 8,
+  "updatedAt": "2026-07-23T12:00:00.000Z",
+  "source": "api-mock"
+}

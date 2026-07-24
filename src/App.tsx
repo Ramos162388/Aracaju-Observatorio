@@ -7,6 +7,7 @@ import { TourismPage } from './pages/TourismPage';
 import { EconomyPage } from './pages/EconomyPage';
 import { EsgapPage } from './pages/EsgapPage';
 import { FundatPage } from './pages/FundatPage';
+import { MulherPage } from './pages/MulherPage';
 
 
 function useCounter(end, duration) {
@@ -64,7 +65,7 @@ var services = [
   { title: 'Turismo', description: 'Atrativos turísticos, visitantes, ocupação hoteleira e impacto econômico do turismo.', icon: 'tourism', path: 'turismo' },
   { title: 'Economia', description: 'PIB, empregos, microcréditos e indicadores de desenvolvimento econômico local.', icon: 'economy', path: 'economia' },
   { title: 'Dados Abertos', description: 'Acesse conjuntos de dados públicos para pesquisas, estudos e desenvolvimento de soluções.', icon: 'data', path: 'home' },
-  { title: 'Transparência', description: 'Acompanhe gastos públicos, licitações, contratos e prestação de contas municipais.', icon: 'transparency', path: 'home' },
+  { title: 'Transparência', description: 'Acompanhe gastos públicos, licitações, contratos e prestação de contas municipais.', icon: 'transparency', url: 'https://transparencia.aracaju.se.gov.br/prefeitura/' },
 ];
 
 var news = [
@@ -163,7 +164,7 @@ function ServiceCard(props) {
       React.createElement('path', { d: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' })
     ),
   };
-  return React.createElement('div', { className: 'service-card animate-fade-in-up', style: { animationDelay: props.delay + 'ms' }, onClick: function() { props.onNavigate(service.path); } },
+  return React.createElement('div', { className: 'service-card animate-fade-in-up', style: { animationDelay: props.delay + 'ms' }, onClick: function() { if (service.url) { window.open(service.url, '_blank', 'noopener'); } else { props.onNavigate(service.path); } } },
     React.createElement('div', { className: 'service-icon' }, icons[service.icon]),
     React.createElement('h3', null, service.title),
     React.createElement('p', null, service.description),
@@ -211,6 +212,7 @@ export var App = function() {
       case 'economia': return React.createElement(EconomyPage, null);
       case 'esgap': return React.createElement(EsgapPage, null);
       case 'fundat': return React.createElement(FundatPage, null);
+      case 'mulher': return React.createElement(MulherPage, null);
 
       default:
         return React.createElement('main', { id: 'main-content', role: 'main' },
@@ -223,24 +225,29 @@ export var App = function() {
             ),
             React.createElement('div', { className: 'container' },
               React.createElement('div', { className: 'hero-content' },
-                React.createElement('div', { className: 'hero-badge' },
-                  React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '16', height: '16', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
-                    React.createElement('circle', { cx: '12', cy: '12', r: '10' }),
-                    React.createElement('path', { d: 'm9 12 2 2 4-4' })
-                  ),
-                  'Portal Oficial de Dados Públicos'
-                ),
-                React.createElement('h1', { className: 'hero-title' }, 'Observatório de ', React.createElement('span', null, 'Aracaju')),
-                React.createElement('p', { className: 'hero-subtitle' }, 'Dados públicos para transparência e desenvolvimento. Acompanhe indicadores de Saúde, Educação, Turismo e Economia da capital sergipana.'),
-                React.createElement('div', { className: 'hero-actions' },
-                  React.createElement('button', { className: 'btn btn-cta btn-lg', onClick: function() { navigateTo('economia'); } },
-                    React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
-                      React.createElement('polyline', { points: '22 7 13.5 15.5 8.5 10.5 2 17' }),
-                      React.createElement('polyline', { points: '16 7 22 7 22 13' })
+                React.createElement('div', { className: 'hero-text' },
+                  React.createElement('div', { className: 'hero-badge' },
+                    React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '16', height: '16', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+                      React.createElement('circle', { cx: '12', cy: '12', r: '10' }),
+                      React.createElement('path', { d: 'm9 12 2 2 4-4' })
                     ),
-                    'Ver Dados Econômicos'
+                    'Portal Oficial de Dados Públicos'
                   ),
-                  React.createElement('button', { className: 'btn btn-outline btn-lg', onClick: function() { navigateTo('saude'); } }, 'Dados de Saúde')
+                  React.createElement('h1', { className: 'hero-title' }, 'Observatório de ', React.createElement('span', null, 'Aracaju')),
+                  React.createElement('p', { className: 'hero-subtitle' }, 'Dados públicos para transparência e desenvolvimento. Acompanhe indicadores de Saúde, Educação, Turismo e Economia da capital sergipana.'),
+                  React.createElement('div', { className: 'hero-actions' },
+                    React.createElement('button', { className: 'btn btn-cta btn-lg', onClick: function() { navigateTo('economia'); } },
+                      React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
+                        React.createElement('polyline', { points: '22 7 13.5 15.5 8.5 10.5 2 17' }),
+                        React.createElement('polyline', { points: '16 7 22 7 22 13' })
+                      ),
+                      'Ver Dados Econômicos'
+                    ),
+                    React.createElement('button', { className: 'btn btn-outline btn-lg', onClick: function() { navigateTo('saude'); } }, 'Dados de Saúde')
+                  )
+                ),
+                React.createElement('div', { className: 'hero-logo' },
+                  React.createElement('img', { src: 'logo_aracaju.svg', alt: 'Brasão de Aracaju' })
                 )
               )
             )
@@ -314,13 +321,13 @@ export var App = function() {
                   React.createElement('h3', null, 'Compromisso com a Transparência'),
                   React.createElement('p', null, 'Todos os dados são atualizados periodicamente e seguem o padrão da Lei de Acesso à Informação (LAI).')
                 ),
-                React.createElement('button', { className: 'btn btn-primary' },
+                React.createElement('a', { href: 'https://transparencia.aracaju.se.gov.br/prefeitura/', target: '_blank', rel: 'noopener noreferrer', className: 'btn btn-primary' },
                   React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: '18', height: '18', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2', strokeLinecap: 'round', strokeLinejoin: 'round' },
                     React.createElement('path', { d: 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4' }),
                     React.createElement('polyline', { points: '7 10 12 15 17 10' }),
                     React.createElement('line', { x1: '12', y1: '15', x2: '12', y2: '3' })
                   ),
-                  'Acessar Dados Abertos'
+                  'Transparência'
                 )
               )
             )

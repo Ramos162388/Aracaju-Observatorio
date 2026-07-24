@@ -22,6 +22,7 @@ export var Footer = function(props) {
               <li><a href="#economia" onClick={function(e) { e.preventDefault(); handleNav('economia'); }}>Economia</a></li>
               <li><a href="#esgap" onClick={function(e) { e.preventDefault(); handleNav('esgap'); }}>ESGAP</a></li>
               <li><a href="#fundat" onClick={function(e) { e.preventDefault(); handleNav('fundat'); }}>FUNDAT</a></li>
+              <li><a href="#mulher" onClick={function(e) { e.preventDefault(); handleNav('mulher'); }}>Mulher</a></li>
             </ul>
           </div>
           <div>
