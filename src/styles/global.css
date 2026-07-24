@@ -398,8 +398,8 @@ p + p { margin-top: 1rem; }
 
 .dashboard-card { background: white; border-radius: var(--radius-lg); padding: 1.75rem; border: 1px solid var(--color-gray-200); box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 0 20px rgba(0,105,102,0.04); transition: all var(--transition-slow); position: relative; }
 .dashboard-card:hover { border-color: rgba(0,105,102,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 30px rgba(0,105,102,0.08), 0 0 60px rgba(127,219,200,0.04); transform: translateY(-2px); }
-.card-neon { border-color: rgba(0,105,102,0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 0 24px rgba(0,105,102,0.06), 0 0 48px rgba(168,230,207,0.03); }
-.card-neon:hover { border-color: rgba(0,105,102,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 40px rgba(0,105,102,0.12), 0 0 80px rgba(127,219,200,0.06); }
+.card-neon { border-color: rgba(0,105,102,0.12); box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 0 8px rgba(0,105,102,0.04), 0 0 16px rgba(168,230,207,0.02); }
+.card-neon:hover { border-color: rgba(0,105,102,0.2); box-shadow: 0 4px 16px rgba(0,0,0,0.04), 0 0 16px rgba(0,105,102,0.06), 0 0 32px rgba(127,219,200,0.03); }
 
 .dashboard-table-neon thead th { color: var(--color-primary); letter-spacing: 0.06em; }
 .dashboard-table-neon tbody tr { transition: all 0.15s; }

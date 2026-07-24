@@ -61,8 +61,8 @@ function TrendArrow(props) {
       background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center',
       color: 'white', flexShrink: 0,
       boxShadow: up
-        ? '0 4px 12px rgba(0,105,102,0.3), 0 0 20px rgba(168,230,207,0.15)'
-        : '0 4px 12px rgba(255,140,66,0.3), 0 0 20px rgba(255,209,102,0.15)'
+        ? '0 2px 6px rgba(0,105,102,0.15)'
+        : '0 2px 6px rgba(255,140,66,0.15)'
     }
   }, up ? React.createElement(ArrowUpIcon, null) : React.createElement(ArrowDownIcon, null));
 }
@@ -87,16 +87,16 @@ function GradientDefs(props) {
       React.createElement('stop', { offset: '100%', stopColor: '#FF8C42' })
     ),
     React.createElement('linearGradient', { id: 'tg' + u, x1: '0', y1: '0', x2: '0', y2: '1' },
-      React.createElement('stop', { offset: '0%', stopColor: '#006966', stopOpacity: 0.45 }),
-      React.createElement('stop', { offset: '40%', stopColor: '#006966', stopOpacity: 0.15 }),
-      React.createElement('stop', { offset: '100%', stopColor: '#006966', stopOpacity: 0.02 })
+      React.createElement('stop', { offset: '0%', stopColor: '#006966', stopOpacity: 0.2 }),
+      React.createElement('stop', { offset: '40%', stopColor: '#006966', stopOpacity: 0.08 }),
+      React.createElement('stop', { offset: '100%', stopColor: '#006966', stopOpacity: 0.01 })
     ),
-    neonFilter('nb' + u, '#006966', 4),
-    neonFilter('ng' + u, '#006966', 3),
-    neonFilter('no' + u, '#FF8C42', 3),
-    neonFilter('nm' + u, '#7FDBC8', 4),
-    neonFilter('nl' + u, '#006966', 5),
-    neonFilter('np' + u, '#008580', 4)
+    neonFilter('nb' + u, '#006966', 1.5),
+    neonFilter('ng' + u, '#006966', 1.2),
+    neonFilter('no' + u, '#FF8C42', 1.2),
+    neonFilter('nm' + u, '#7FDBC8', 1.5),
+    neonFilter('nl' + u, '#006966', 2),
+    neonFilter('np' + u, '#008580', 1.5)
   );
 }
 
